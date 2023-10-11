@@ -23,7 +23,7 @@
   },
   "homepage": "https://github.com/Mist3r-Robot/classic-discord-webhook#readme",
   "dependencies": {
-    "@actions/core": "1.9.1",
+    "@actions/core": "^1.2.3",
     "@actions/github": "^2.1.1",
     "discord.js": "^13.6.0",
     "child-process-promise": "^2.2.1",
