@@ -42,7 +42,12 @@ jobs:
 You can see the example file at [/.github/workflows/discord-push.yml](/.github/workflows/discord-push.yml)
 ## Inputs
 
-|                                                          `id`                                                          |                                   `token`                                   |                                           `threadId`                                            |
+in your **Settings > Security > Secrets and variables > Actions > Secrets** (/settings/secrets/actions) on GitHub, you need to add 2 secrets :
+- `DISCORD_WEBHOOK_ID`
+- `DISCORD_WEBHOOK_TOKEN`
+
+
+|                                                  `DISCORD_WEBHOOK_ID`                                                  |                           `DISCORD_WEBHOOK_TOKEN`                           |                                   `DISCORD_WEBHOOK_THREAD_ID`                                   |
 |:----------------------------------------------------------------------------------------------------------------------:|:---------------------------------------------------------------------------:|:-----------------------------------------------------------------------------------------------:|
 | **Required** — This is the id of your Discord webhook, if you copy the webhook url, this will be the first part of it. | **Required** — Your Discord webhook token, it's the second part of the url. | Not required — if you want to send the message in a thread, you can specify the thread id here. |
 
