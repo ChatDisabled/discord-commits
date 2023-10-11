@@ -1,0 +1,29 @@
+name: Discord Webhook
+on: [push]
+jobs:
+  Discord_notification:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Run Discord Webhook
+        uses: Mist3r-Robot/classic-discord-webhook@main
+        with:
+          id: ${{ secrets.DISCORD_WEBHOOK_ID }}
+          token: ${{ secrets.DISCORD_WEBHOOK_TOKEN }}
+  CI:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [16.x]
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Dependencies
+        run: npm install
