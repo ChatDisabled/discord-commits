@@ -6,9 +6,9 @@ This GitHub Action can produce fancy and **more meaningful Discord messages for 
 ## Screenshots
 The standard webhook from GitHub to Discord just dumps the commit messages right into your chat, this is fine but sometimes you just want some extra information. Did the commit introduce any new issues? Did it even compile successfully? That's what this Action is for.
 
-|                                                        Standard Webhook                                                        |                                                    New and improved Webhook                                                     |
-|:------------------------------------------------------------------------------------------------------------------------------:|:-------------------------------------------------------------------------------------------------------------------------------:|
-| ![Old webhook interface](https://user-images.githubusercontent.com/14293805/90334058-11e81900-dfcb-11ea-8de0-f01a7591254d.png) | ![New webhook interface](https://user-images.githubusercontent.com/14293805/164105728-89678a3a-1e5c-4e9b-bd35-0508c2c4f0ee.png) |
+|                                                        Standard Webhook                                                        |                                                        New and improved Webhook                                                        |
+|:------------------------------------------------------------------------------------------------------------------------------:|:--------------------------------------------------------------------------------------------------------------------------------------:|
+| ![Old webhook interface](https://user-images.githubusercontent.com/14293805/90334058-11e81900-dfcb-11ea-8de0-f01a7591254d.png) | ![New webhook interface](https://github.com/Mist3r-Robot/classic-discord-webhook/assets/14293805/f7ede24b-b902-49f4-8f89-055e9a8a0903) |
 
 ## Donate
 Feel free to help [me](https://github.com/thomasbnt) for the maintenance of this project !
