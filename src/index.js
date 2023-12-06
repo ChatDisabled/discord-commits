@@ -19,7 +19,6 @@ async function run() {
 
   const id = core.getInput('id')
   const token = core.getInput('token')
-  const pusher = core.getInput('pusher')
 
   webhook
     .send(
@@ -29,7 +28,7 @@ async function run() {
       payload.compare,
       commits,
       size,
-      pusher
+      payload.pusher.name
     )
     .catch((err) => core.setFailed(err.message))
 }

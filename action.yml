@@ -11,9 +11,6 @@ inputs:
   token:
     description: The Discord Webhook Token
     required: true
-  pusher:
-    description: The person that pushed the workflow
-    required: true
 
 runs:
   using: 'node16'
