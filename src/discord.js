@@ -1,7 +1,7 @@
 const { MessageEmbed, WebhookClient } = require('discord.js')
 const MAX_MESSAGE_LENGTH = 72
 
-module.exports.send = (id, token, repo, url, commits, size) =>
+module.exports.send = (id, token, repo, url, commits, size, pusher) =>
   new Promise((resolve, reject) => {
     let client
     const username = repo.replace(/(discord)/gi, '******')
@@ -14,7 +14,7 @@ module.exports.send = (id, token, repo, url, commits, size) =>
       client
         .send({
           username: username,
-          embeds: [createEmbed(url, commits, size)],
+          embeds: [createEmbed(url, commits, size, pusher)],
         })
         .then(() => {
           console.log('Successfully sent the message!')
@@ -27,7 +27,7 @@ module.exports.send = (id, token, repo, url, commits, size) =>
     }
   })
 
-function createEmbed(url, commits, size) {
+function createEmbed(url, commits, size, pusher) {
   console.log('Constructing Embed...')
   console.log('Commits :')
   console.log(commits)

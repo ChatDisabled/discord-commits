@@ -28,6 +28,7 @@ async function run() {
       payload.compare,
       commits,
       size,
+      payload.pusher.name
     )
     .catch((err) => core.setFailed(err.message))
 }
