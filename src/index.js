@@ -5,7 +5,7 @@ const webhook = require('../src/discord.js')
 
 async function run() {
 	const payload = github.context.payload
-	const repository = payload.repository.full_name
+	const repository = payload.repository.name
 	const commits = payload.commits
 	const size = commits.length
 	const branch = payload.ref.split('/')[payload.ref.split('/').length - 1]
