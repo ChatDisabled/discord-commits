@@ -11,3 +11,4 @@ jobs:
         with:
           id: ${{ secrets.DISCORD_WEBHOOK_ID }}
           token: ${{ secrets.DISCORD_WEBHOOK_TOKEN }}
+          pusher: ${{ github.actor }}
