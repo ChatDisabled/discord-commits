@@ -18,6 +18,7 @@ module.exports.send = (id, token, repo, branch, url, commits, size, threadId) =>
               console.log('Found thread ID')
               client
                 .send({
+                    username: repo,
                     embeds: [createEmbed(repo, branch, url, commits, size)],
                     threadId: threadId,
                 })
@@ -28,6 +29,7 @@ module.exports.send = (id, token, repo, branch, url, commits, size, threadId) =>
           } else {
               client
                 .send({
+                    username: repo,
                     embeds: [createEmbed(repo, branch, url, commits, size)],
                 })
                 .then(() => {
@@ -54,17 +56,12 @@ function createEmbed(repo, branch, url, commits, size) {
     return new MessageEmbed()
       .setColor(0xF1E542)
       .setAuthor({
-          name: `${size} ${
-            size === 1 ? 'commit was' : 'commits were'
-          } added to ${repo}`,
+          name: `⚡ ${latest.author.username} pushed ${size} commit${size === 1 ? '' : 's'}`,
           iconURL: `https://github.com/${latest.author.username}.png?size=32`,
           url: url
       })
       .setDescription(`${getChangeLog(commits, size)}`)
       .setTimestamp(Date.parse(latest.timestamp))
-      .setFooter({
-          text: `⚡ Pushed by ${latest.author.username}`,
-      })
 }
 
 function getChangeLog(commits, size) {
