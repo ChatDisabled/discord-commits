@@ -4,7 +4,7 @@ const MAX_MESSAGE_LENGTH = 72
 module.exports.send = (id, token, repo, branch, url, commits, size) =>
   new Promise((resolve, reject) => {
     let client
-    const username = repo.replace('discord', '******')
+    const username = repo.replace('Discord', '******')
     console.log('Preparing Webhook...')
     console.log(username)
     console.log(repo)
