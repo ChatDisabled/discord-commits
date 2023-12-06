@@ -6,8 +6,6 @@ module.exports.send = (id, token, repo, branch, url, commits, size) =>
     let client
     const username = repo.replace(/(discord)/gi, '******')
     console.log('Preparing Webhook...')
-    console.log(username)
-    console.log(repo)
     try {
       client = new WebhookClient({
         id: id,
