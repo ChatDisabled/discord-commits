@@ -7,7 +7,7 @@ async function run() {
   const repository = payload.repository.name
   const commits = payload.commits
   const size = commits.length
-
+  console.log(JSON.stringify(github))
   console.log(`Received payload.`)
 
   console.log(`Received ${commits.length}/${size} commits...`)
