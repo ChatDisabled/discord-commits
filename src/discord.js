@@ -63,7 +63,7 @@ function createEmbed(repo, branch, url, commits, size) {
       .setDescription(`${getChangeLog(commits, size)}`)
       .setTimestamp(Date.parse(latest.timestamp))
       .setFooter({
-          text: `⚡ Pushed by @${latest.author.username}`,
+          text: `⚡ Pushed by ${latest.author.username}`,
       })
 }
 
