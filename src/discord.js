@@ -42,7 +42,7 @@ function createEmbed(url, commits, size, pusher) {
       name: `⚡ ${pusher} pushed ${size} commit${
         size === 1 ? '' : 's'
       }`,
-      iconURL: `https://github.com/${latest.author.username}.png?size=32`,
+      iconURL: `https://github.com/${pusher}.png?size=64`,
       url: url,
     })
     .setDescription(`${getChangeLog(commits, size)}`)
