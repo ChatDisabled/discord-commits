@@ -7,7 +7,6 @@ async function run() {
   const repository = payload.repository.name
   const commits = payload.commits
   const size = commits.length
-  const branch = payload.ref.split('/')[payload.ref.split('/').length - 1]
 
   console.log(`Received payload.`)
 
@@ -26,7 +25,6 @@ async function run() {
       id,
       token,
       repository,
-      branch,
       payload.compare,
       commits,
       size,
