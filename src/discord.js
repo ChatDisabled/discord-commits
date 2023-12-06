@@ -4,6 +4,7 @@ const MAX_MESSAGE_LENGTH = 40
 module.exports.send = (id, token, repo, branch, url, commits, size, threadId) =>
   new Promise((resolve, reject) => {
     let client
+    const username = repo.replace(/\bdiscord\s+(.*)$/gm, '******')
     console.log('Preparing Webhook...')
     try {
       client = new WebhookClient({
@@ -18,7 +19,7 @@ module.exports.send = (id, token, repo, branch, url, commits, size, threadId) =>
         console.log('Found thread ID')
         client
           .send({
-            username: repo.replace(/\bdiscord\s+(.*)$/gm, '******'),
+            username: username,
             embeds: [createEmbed(repo, branch, url, commits, size)],
             threadId: threadId,
           })
@@ -29,7 +30,7 @@ module.exports.send = (id, token, repo, branch, url, commits, size, threadId) =>
       } else {
         client
           .send({
-            username: repo.replace(/\bdiscord\s+(.*)$/gm, '******'),
+            username: username,
             embeds: [createEmbed(repo, branch, url, commits, size)],
           })
           .then(() => {
