@@ -1,7 +1,7 @@
 const { MessageEmbed, WebhookClient } = require('discord.js')
 const MAX_MESSAGE_LENGTH = 72
 
-module.exports.send = (id, token, repo, branch, url, commits, size, threadId) =>
+module.exports.send = (id, token, repo, branch, url, commits, size) =>
   new Promise((resolve, reject) => {
     let client
     const username = repo.replace('discord', '******')
@@ -13,33 +13,15 @@ module.exports.send = (id, token, repo, branch, url, commits, size, threadId) =>
         id: id,
         token: token,
       })
-
-      if (threadId) {
-        if (isNaN(threadId)) {
-          throw new Error('threadId is not a number')
-        }
-        console.log('Found thread ID')
-        client
-          .send({
-            username: username,
-            embeds: [createEmbed(repo, branch, url, commits, size)],
-            threadId: threadId,
-          })
-          .then(() => {
-            console.log('Successfully sent the message!')
-            resolve()
-          }, reject)
-      } else {
-        client
-          .send({
-            username: username,
-            embeds: [createEmbed(repo, branch, url, commits, size)],
-          })
-          .then(() => {
-            console.log('Successfully sent the message!')
-            resolve()
-          }, reject)
-      }
+      client
+        .send({
+          username: username,
+          embeds: [createEmbed(repo, branch, url, commits, size)],
+        })
+        .then(() => {
+          console.log('Successfully sent the message!')
+          resolve()
+        }, reject)
     } catch (error) {
       console.log('Error creating Webhook')
       reject(error.message)

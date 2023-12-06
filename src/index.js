@@ -1,6 +1,5 @@
 const core = require('@actions/core')
 const github = require('@actions/github')
-
 const webhook = require('../src/discord.js')
 
 async function run() {
@@ -21,7 +20,6 @@ async function run() {
 
   const id = core.getInput('id')
   const token = core.getInput('token')
-  const threadId = core.getInput('threadId')
 
   webhook
     .send(
@@ -32,7 +30,6 @@ async function run() {
       payload.compare,
       commits,
       size,
-      threadId
     )
     .catch((err) => core.setFailed(err.message))
 }
