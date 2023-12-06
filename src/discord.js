@@ -1,5 +1,5 @@
 const { MessageEmbed, WebhookClient } = require('discord.js')
-const MAX_MESSAGE_LENGTH = 40
+const MAX_MESSAGE_LENGTH = 72
 
 module.exports.send = (id, token, repo, branch, url, commits, size, threadId) =>
   new Promise((resolve, reject) => {
