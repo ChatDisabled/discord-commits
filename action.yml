@@ -11,9 +11,6 @@ inputs:
   token:
     description: The Discord Webhook Token
     required: true
-  threadId:
-    description: If you want to send the embed message in a specific thread
-    required: false
 
 runs:
   using: 'node16'
