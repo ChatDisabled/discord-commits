@@ -18,7 +18,7 @@ module.exports.send = (id, token, repo, branch, url, commits, size, threadId) =>
               console.log('Found thread ID')
               client
                 .send({
-                    username: repo,
+                    username: repo.replace('Discord', '******'),
                     embeds: [createEmbed(repo, branch, url, commits, size)],
                     threadId: threadId,
                 })
@@ -29,7 +29,7 @@ module.exports.send = (id, token, repo, branch, url, commits, size, threadId) =>
           } else {
               client
                 .send({
-                    username: repo,
+                    username: repo.replace('Discord', '******'),
                     embeds: [createEmbed(repo, branch, url, commits, size)],
                 })
                 .then(() => {
