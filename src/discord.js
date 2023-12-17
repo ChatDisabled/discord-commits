@@ -59,8 +59,6 @@ function getChangeLog(commits, size) {
 
     const commit = commits[i]
     const sha = commit.id.substring(0, 6)
-    console.log(JSON.stringify(commit))
-    console.log(commit.title)
     const message =
       commit.message.length > MAX_MESSAGE_LENGTH
         ? commit.message.substring(0, MAX_MESSAGE_LENGTH) + '...'
