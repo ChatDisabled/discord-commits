@@ -11,7 +11,7 @@ async function run() {
   console.log(`Received payload.`)
   console.log(`Received ${commits.length}/${size} commits...`)
   console.log(`------------------------`)
-  console.log(`Full payload: ${payload}`)
+  console.log(`Full payload: ${JSON.stringify(payload)}`)
   console.log(`------------------------`)
 
   if (commits.length === 0) {
