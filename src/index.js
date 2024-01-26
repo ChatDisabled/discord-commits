@@ -9,8 +9,10 @@ async function run() {
   const size = commits.length
 
   console.log(`Received payload.`)
-
   console.log(`Received ${commits.length}/${size} commits...`)
+  console.log(`------------------------`)
+  console.log(`Full payload: ${payload}`)
+  console.log(`------------------------`)
 
   if (commits.length === 0) {
     console.log(`No commits, skipping...`)
