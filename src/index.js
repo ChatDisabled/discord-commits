@@ -18,6 +18,10 @@ async function run() {
     console.log(`No commits, skipping...`)
     return
   }
+  if (payload.sender.type === 'Bot') {
+    console.log(`Commit by bot, skipping...`)
+    return
+  }
 
   const id = core.getInput('id')
   const token = core.getInput('token')
